@@ -12,7 +12,6 @@ Example for Linux Ubuntu 22.04 and 20.04 Server Installation. With the provided 
 
 ```bash
 
-apt install sudo
 sudo apt update -y
 sudo apt install git -y
 
