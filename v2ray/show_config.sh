@@ -1,0 +1,5 @@
+echo "dns1 >> $(cat dns1.conf | head -n1)"
+echo "dns2 >> $(cat dns2.conf | head -n1)"
+echo "vmess_port >> $(cat vmess_port.conf | head -n1)"
+echo "shadowsocks_port >> $(cat shadowsocks_port.conf | head -n1)"
+echo "shadowsocks_pass >> $(cat shadowsocks_pass.conf | head -n1)"
