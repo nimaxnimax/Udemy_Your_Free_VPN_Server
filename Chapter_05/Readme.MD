@@ -28,7 +28,7 @@ cat install.sh
 
 bash install.sh
 
-cat zzz_v2ray_config_info.txt
+cat v2ray_config_info.txt
 
 sudo docker ps -a
 

@@ -46,9 +46,9 @@ sudo bash ipconfig.sh
 sleep $sleeptime
 sudo bash start.sh
 sleep $sleeptime
-sudo bash info.sh > zzz_v2ray_config_info.txt
+sudo bash info.sh > v2ray_config_info.txt
 cd ..
-mv v2ray-bridge-server/zzz_v2ray_config_info.txt .
-cat zzz_v2ray_config_info.txt
+mv v2ray-bridge-server/v2ray_config_info.txt .
+cat v2ray_config_info.txt
 echo "Done!"
 
