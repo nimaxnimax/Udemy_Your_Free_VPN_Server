@@ -1,3 +1,6 @@
+![Alt text](image.png)
+
+
 About VPN - What is VPN?!
 
 A VPN, or Virtual Private Network, is a technology that allows you to create a secure connection over the Internet. It enables users to send and receive data as if their devices are directly connected to a private network, even if they are accessing the internet through a public network. The primary purpose of a VPN is to enhance privacy and security by encrypting the data that is transmitted between your device and the VPN server.
