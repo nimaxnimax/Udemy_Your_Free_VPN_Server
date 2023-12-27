@@ -1,0 +1,102 @@
+{
+  "log": {
+    "access": "/dev/null",
+    "error": "/dev/null",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "listen": "0.0.0.0",
+      "port": 1010,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true
+      }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 1110,
+      "protocol": "http",
+      "settings": {}
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 80,
+      "protocol": "shadowsocks",
+      "settings": {
+        "password": "FR33DoM",
+        "method": "aes-128-gcm",
+        "level": 0,
+        "network": "tcp,udp"
+      }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 443,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "a04be4ef-1797-4ca9-a549-4385ce42494c",
+            "alterId": 0,
+            "security": "aes-128-gcm"
+          }
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "192.168.124.133",
+            "port": 1320,
+            "users": [
+              {
+                "id": "7c215b11-8cd4-4b9c-bb06-f97f1e8e8038",
+                "alterId": 0,
+                "security": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws"
+      },
+      "mux": {
+        "enabled": true
+      }
+    },
+    {
+      "protocol": "freedom",
+      "tag": "freedom"
+    }
+  ],
+  "dns": {
+    "servers": [
+      "8.8.8.8",
+      "8.8.4.4",
+      "localhost"
+    ]
+  },
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "settings": {
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "freedom",
+          "domain": [
+            "regexp:.*\\.abcxyzabcxyz$"
+          ]
+        }
+      ]
+    }
+  }
+}
+
