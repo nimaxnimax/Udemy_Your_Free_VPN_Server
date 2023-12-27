@@ -26,6 +26,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 sudo apt install docker-compose -y
 sudo systemctl start docker
 sudo systemctl enable docker
+sudo docker rm -f $(sudo docker ps -q)
 sleep $sleeptime
 sudo bash zconfig.sh
 cd utils
