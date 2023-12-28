@@ -11,7 +11,7 @@ bash show_config.sh
 
 echo "1.1.1.1" > dns1.conf
 
-echo "4.2.2.4" > dns1.conf
+echo "4.2.2.4" > dns2.conf
 
 echo "NEWPASSWORD" > shadowsocks_pass.conf
 
