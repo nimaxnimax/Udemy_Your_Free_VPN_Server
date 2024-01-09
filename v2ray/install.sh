@@ -1,4 +1,9 @@
 sleeptime=0
+read -p "Do you want to change the default configuration? (yes/no): " answer
+if [ "$answer" == "yes" ]; then
+    sudo bash config.sh
+    echo "Configuration changed successfully!"
+fi
 echo "Started!"
 sleep $sleeptime
 # apt install sudo -y
@@ -32,7 +37,7 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo docker rm -f $(sudo docker ps -q)
 sleep $sleeptime
-sudo bash zconfig.sh
+sudo bash z
 cd utils
 sudo bash bbr.sh
 sleep $sleeptime
@@ -51,4 +56,7 @@ cd ..
 mv v2ray-bridge-server/v2ray_config_info.txt .
 cat v2ray_config_info.txt
 echo "Done!"
-
+shadowsocks_port=$(cat shadowsocks_port.conf)
+vmess_port=$(cat vmess_port.conf)
+echo "Allow On Your Cloud/VPS >> TCP Shadowsocks Port: $shadowsocks_port"
+echo "Allow On Your Cloud/VPS >> TCP VMess Port: $vmess_port"
