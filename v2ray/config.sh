@@ -112,7 +112,7 @@ config_file="shadowsocks_port.conf"
 validate_port() {
     local port=$1
     local valid_range="2-65534"
-    local invalid_ports="22,1320"
+    local invalid_ports="22,1320,1010,1110"
 
     if [[ ! "$port" =~ ^[0-9]+$ ]]; then
         return 1 # Invalid port format
@@ -155,7 +155,7 @@ config_file="vmess_port.conf"
 validate_port() {
     local port=$1
     local valid_range="2-65534"
-    local invalid_ports="22,1320"
+    local invalid_ports="22,1320,1010,1110"
 
     if [[ ! "$port" =~ ^[0-9]+$ ]]; then
         return 1 # Invalid port format
